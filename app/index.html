@@ -3,22 +3,35 @@
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 </head>
 <body ng-controller="mainController">
-	<h1 style="color:red">{{greeting}}, Cisco {{50 + 65}}
-	</h1>
-	<div ng-controller="subController" style="color:green"><h2>{{greeting}}</h2></div>
-	<h2 style="color:blue">{{greeting}}</h2>
+	<p>
+		<h1 ng-show="isMorning" style="color:red">{{greeting}}, Cisco {{50 + 65}}</h1>
+
+		<input type="text" ng-value="greeting"/>
+
+		<textarea>{{greeting}}</textarea>
+
+		<div>
+			<input type="checkbox" ng-model="isMorning" />{{isMorning}}
+		</div>
+
+	</p>
+	<div>
+		<p>Two way binding :</p>
+		<input type="text" ng-model="greeting" />
+
+	</div>
+
 </body>
 	<script>
 	//declaring a module
 	var app = angular.module('myApp', []);
 
-	app.controller('subController', function($scope) {
-		$scope.greeting = 'Urhg. First working day for the new year!'
-	}); 
 	//register a controller
 	app.controller('mainController', 
 
 		function($scope){
+
+			$scope.isMorning = true;
 			var greeting = '';
 			var goodness = true;
 

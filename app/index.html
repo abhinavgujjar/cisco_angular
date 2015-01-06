@@ -6,40 +6,49 @@
 	<p>
 		<h1 style="color:red">{{greeting}}, Cisco {{50 + 65}}</h1>
 	</p>
-	<div class="row">
-		<form class="form-inline">
-			<div class="form-group">
-				<label >Search</label>
-				<input type="text" class="form-control"ng-model="searchTerm"/>
-				<div class="form-group">
-					<label >Limit</label>
-					<select ng-model="itemsToDisplay">
-						<option value="2">2</option>
-						<option value="5">5</option>
-						<option value="50">50</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label >Order</label>
-					<select ng-model="orderTerm">
-						<option value="name">Name</option>
-						<option value="price">Price</option>
-					</select>
-				</div>
-			</form>
-		</div>
+	<br/>
+	<br/>
+
 	<p>
 		<div class="col-md-8" ng-controller="listingController">
+			<div class="row">
+				<form class="form-inline">
+					<div class="form-group">
+						<label >Search</label>
+						<input type="text" class="form-control" ng-model="searchTerm"/>
+					</div>
+					<div class="form-group">
+						<label >Limit</label>
+						<select class="form-control" ng-model="itemsToDisplay">
+							<option value="2">2</option>
+							<option value="5">5</option>
+							<option value="50">50</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label >Order</label>
+						<select class="form-control" ng-model="orderTerm">
+							<option value="name">Name</option>
+							<option value="price">Price</option>
+						</select>
+					</div>
+				</form>
+			</div>
 			<div ng-repeat="item in hotels | filter : searchTerm | limitTo :itemsToDisplay| orderBy : orderTerm" class="row well well-sm">
 
 				<div>
 					<h3>{{item.name}}</h3>
 				</div>
 				<div>
+					<div class="col-md-1">
+						<div><button>up</button></div>
+						<div></div>
+						<div><button>down</button></div>
+					</div>
 					<img ng-src="images/{{item.pic}}" class="col-md-3" />
-					<div>
+					<div class="col-md-8">
 						<h3>{{item.price}}</h3>
-						<div class="h3">{{item.location}}</div>
+						<div class="h4">{{item.location}}</div>
 						<div class="text-muted">{{item.description}}</div>
 					</div>
 

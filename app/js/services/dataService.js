@@ -64,8 +64,13 @@ app.factory('dataService', function() {
 
 	}
 
+	var ticks = {
+		number: 0
+	};
+
 	return {
 		hotels: hotels,
+		ticks: ticks,
 		addHotel: addHotel
 
 	}

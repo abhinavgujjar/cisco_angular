@@ -1,11 +1,10 @@
 <html ng-app="myApp" >
 <head>
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></head>
-<style type="text/css">
+	<style type="text/css">
 	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }</style>
-
 
 <body ng-controller="mainController" class="container" >
 
@@ -15,7 +14,18 @@
 	<br/>
 	<br/>
 
-	
+	<ul class="nav nav-pills">
+		<li role="presentation" class="active">
+			<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+			<a href="#">Profile</a>
+		</li>
+		<li role="presentation">
+			<a href="#">Messages</a>
+		</li>
+	</ul>
+
 	<ng-view></ng-view>
 
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>

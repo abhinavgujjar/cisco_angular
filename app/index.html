@@ -1,7 +1,13 @@
 <html ng-app="myApp" >
 <head>
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></head>
-<body ng-controller="mainController" class="container">
+<style type="text/css">
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}</style>
+
+
+<body ng-controller="mainController" class="container" >
 
 	<p>
 		<h1 style="color:red">{{greeting}}, Cisco {{50 + 65}}</h1>
@@ -10,7 +16,7 @@
 	<br/>
 
 	<p>
-		<div class="col-md-9" ng-controller="listingController">
+		<div class="col-md-9" ng-controller="listingController" ng-cloak>
 			<div class="row">
 				<form class="form-inline">
 					<div class="form-group">

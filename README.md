@@ -8,7 +8,13 @@ JSHint - Javascript code quality tool. You can find sublime text extensions for 
 
 Sublime Text 3 - One of the best free editors for working with angular js. Other options are brackets and WebStorm
 
-exercise 1 - http://plnkr.co/edit/ZjtBKawwcNqE9RoBO4d3
+Plunks
+--------
 
-http://plnkr.co/edit/D8kRKF?p=preview
+	* exercise 1 - http://plnkr.co/edit/ZjtBKawwcNqE9RoBO4d3
+	* http://plnkr.co/edit/D8kRKF?p=preview
+
+References
+-----------
+	* [Javascript Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 

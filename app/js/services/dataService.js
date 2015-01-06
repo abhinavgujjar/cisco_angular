@@ -1,5 +1,5 @@
-app.factory('dataService', function($http) {
-	
+app.factory('dataService', function($http, $timeout) {
+
 
 	function addHotel(hotel) {
 		if (!hotel.pic) {
@@ -15,15 +15,21 @@ app.factory('dataService', function($http) {
 	};
 
 	return {
-		getHotels: function(callback){
-			var hotels;
-			var promise = $http({method: 'GET', url:'data/hotels.json'});
+		getHotels: function(callback) {
 
-			promise.success(function(data){
-				callback(data.result);
-			})
+			$timeout(function() {
+				var hotels;
+				var promise = $http({
+					method: 'GET',
+					url: 'data/hotels.json'
+				});
 
-			return hotels;
+				promise.success(function(data) {
+					return callback(data.result);
+				});
+
+			}, 2000);
+
 		},
 		ticks: ticks,
 		addHotel: addHotel

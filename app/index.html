@@ -1,90 +1,68 @@
 <html ng-app="myApp" >
 <head>
-	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
-</head>
-<body ng-controller="mainController">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></head>
+<body ng-controller="mainController" class="container">
+
 	<p>
 		<h1 style="color:red">{{greeting}}, Cisco {{50 + 65}}</h1>
-
-		<div>
-			name :
-			<input type="text" ng-model="name"/>
-		</div>
-		<div>
-			Price:
-			<input type="number" ng-model="price" />
-		</div>
-		<div>
-			<button ng-click="add(name, price)">Add</button>
-		</div>
-
 	</p>
+	<div class="row">
+		<form class="form-inline">
+			<div class="form-group">
+				<label >Search</label>
+				<input type="text" class="form-control"ng-model="searchTerm"/>
+				<div class="form-group">
+					<label >Limit</label>
+					<select ng-model="itemsToDisplay">
+						<option value="2">2</option>
+						<option value="5">5</option>
+						<option value="50">50</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label >Order</label>
+					<select ng-model="orderTerm">
+						<option value="name">Name</option>
+						<option value="price">Price</option>
+					</select>
+				</div>
+			</form>
+		</div>
 	<p>
-		<div ng-repeat="item in hotels">
-			<h3>{{item.name}}</h3>
-			<h3>{{item.price}}</h3>
-		</div>
+		<div class="col-md-8" ng-controller="listingController">
+			<div ng-repeat="item in hotels | filter : searchTerm | limitTo :itemsToDisplay| orderBy : orderTerm" class="row well well-sm">
 
+				<div>
+					<h3>{{item.name}}</h3>
+				</div>
+				<div>
+					<img ng-src="images/{{item.pic}}" class="col-md-3" />
+					<div>
+						<h3>{{item.price}}</h3>
+						<div class="h3">{{item.location}}</div>
+						<div class="text-muted">{{item.description}}</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-md-offset-1" ng-controller="addController">
+			<form>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Name</label>
+					<input type="text" ng-model="hotel.name" class="form-control"></div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Price</label>
+					<input type="number" class="form-control" ng-model="hotel.price" ></div>
+				<button ng-click="addHotel(hotel)" class="btn btn-default">Add</button>
+			</form>
+		</div>
 	</p>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="js/controllers/mainController.js"></script>
+	<script type="text/javascript" src="js/controllers/addController.js"></script>
+	<script type="text/javascript" src="js/controllers/listingController.js"></script>
 
 </body>
-	<script>
-	//declaring a module
-	var app = angular.module('myApp', []);
-
-	//register a controller
-	app.controller('mainController', 
-
-		function($scope){
-
-			$scope.add = function(name, price){
-				$scope.hotels.push({
-					name : name,
-					price : price
-				})
-			}
-
-
-			var greeting = '';
-			var goodness = true;
-
-			if ( goodness)
-				greeting += 'Good ';
-
-			var time = (new Date()).getHours();
-
-			if ( time > 12 ){
-				greeting += 'Afternoon';
-			} else if ( time > 16 ){
-				greeting += 'Evening';
-			} else {
-				greeting += 'Morning';
-			}
-
-			$scope.greeting = greeting;
-
-
-			if ( $scope.greeting.length > 25) {
-				isMorning = false;
-			}
-
-
-			$scope.hotels = [{
-				name : 'Taj Westend',
-				price : 50000
-			},{
-				name : 'Park Plaza',
-				price : 20000
-			},{
-				name : 'Leela Palace',
-				price : 60000
-			}]
-
-
-		}
-
-	);
-
-</script>
-
 </html>

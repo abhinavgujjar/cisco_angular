@@ -19,4 +19,7 @@ Plunks
 References
 -----------
 	*[Javascript Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+	*Thinking in Angular - http://stackoverflow.com/questions/14994391/thinking-in-angularjs-if-i-have-a-jquery-background
+
+	
 

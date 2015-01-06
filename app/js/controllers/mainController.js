@@ -3,6 +3,7 @@ app.controller('mainController',
 
 	function($scope) {
 
+		
 
 		var greeting = '';
 		var goodness = true;
@@ -27,7 +28,7 @@ app.controller('mainController',
 			isMorning = false;
 		}
 
-
+		$scope.done= true;
 
 	}
 

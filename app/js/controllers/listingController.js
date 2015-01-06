@@ -1,4 +1,4 @@
-app.controller('listingController', function($scope, dataService, textLimit, $interval) {
+app.controller('listingController', function($scope, $http, dataService, textLimit, $interval) {
 	// $interval(function(){
 	// 	dataService.ticks.number ++
 	// }, 500);
@@ -9,8 +9,11 @@ app.controller('listingController', function($scope, dataService, textLimit, $in
 
 	$scope.ticks = dataService.ticks;
 
-	$scope.hotels = dataService.hotels;
+	dataService.getHotels(function(hotels){
+		$scope.hotels = hotels;
+	})
 
+	
 	$scope.itemsToDisplay = 50;
 
 	$scope.textLimit = textLimit;

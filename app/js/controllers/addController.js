@@ -14,7 +14,31 @@ function addController($scope, dataService, $location) {
 		}
 	}
 
-	$scope.images = ['goldenpalms.jpg', 'clarks-exotica', 'the-elanza', 'ramada.jpg', 'ibis.jpg', 'oberoi.jpg'];
+	var index = 0;
+
+
+	$scope.next = function() {
+		if (index >= $scope.images.length) {
+			index = 0;
+		} else {
+
+			index++;
+		}
+		$scope.displayImage = $scope.images[index];
+	}
+
+	$scope.prev = function() {
+
+		index--;
+		$scope.displayImage = $scope.images[index];
+	}
+
+	$scope.images = ['goldenpalms.jpg', 'clarks-exotica-resort.jpg', 'the-elanza-hotel.jpg', 'ramada.jpg', 'ibis.jpg', 'oberoi.jpg'];
+
+	$scope.displayImage = $scope.images[index];
+
+
+
 }
 addController.$inject = ["$scope", "dataService", "$location"];
 app.controller('addController', addController);

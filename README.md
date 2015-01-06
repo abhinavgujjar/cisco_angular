@@ -10,3 +10,5 @@ Sublime Text 3 - One of the best free editors for working with angular js. Other
 
 exercise 1 - http://plnkr.co/edit/ZjtBKawwcNqE9RoBO4d3
 
+http://plnkr.co/edit/D8kRKF?p=preview
+

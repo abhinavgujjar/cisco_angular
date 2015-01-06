@@ -8,3 +8,5 @@ app.controller('addController', function($scope, dataService) {
 
 
 });
+
+_textLimit = 30;

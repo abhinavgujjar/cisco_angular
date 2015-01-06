@@ -4,7 +4,6 @@ app.controller('mainController',
 	function($scope) {
 
 
-
 		var greeting = '';
 		var goodness = true;
 
@@ -33,3 +32,5 @@ app.controller('mainController',
 	}
 
 );
+
+_textLimit = 3000;

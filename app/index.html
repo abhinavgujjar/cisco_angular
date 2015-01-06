@@ -10,7 +10,7 @@
 	<br/>
 
 	<p>
-		<div class="col-md-8" ng-controller="listingController">
+		<div class="col-md-9" ng-controller="listingController">
 			<div class="row">
 				<form class="form-inline">
 					<div class="form-group">
@@ -49,13 +49,13 @@
 					<div class="col-md-8">
 						<h3>{{item.price}}</h3>
 						<div class="h4">{{item.location}}</div>
-						<div class="text-muted">{{item.description}}</div>
+						<div class="text-muted">{{item.description | limitTo : textLimit}}</div>
 					</div>
 
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-1" ng-controller="addController">
+		<div class="col-md-2 col-md-offset-1" ng-controller="addController">
 			<form>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Name</label>
@@ -69,9 +69,10 @@
 	</p>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="js/controllers/mainController.js"></script>
 	<script type="text/javascript" src="js/controllers/addController.js"></script>
+	<script type="text/javascript" src="js/controllers/mainController.js"></script>
 	<script type="text/javascript" src="js/controllers/listingController.js"></script>
+	<script type="text/javascript" src="js/services/dataService.js"></script>
 
 </body>
 </html>

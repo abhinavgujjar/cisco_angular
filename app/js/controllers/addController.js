@@ -1,12 +1,13 @@
+//min safed using ng-annotate.
 
-app.controller('addController', function($scope, dataService) {
+function addController( $scope, dataService,  $location) {
 
 	$scope.addHotel = function(hotel) {
-			var newHotel = angular.copy(hotel);
-			dataService.addHotel(newHotel);
-		}
+		var newHotel = angular.copy(hotel);
+		dataService.addHotel(newHotel);
 
-
-});
-
-_textLimit = 30;
+		$location.url('listing');
+	}
+}
+addController.$inject = ["$scope", "dataService", "$location"];
+app.controller('addController',addController);

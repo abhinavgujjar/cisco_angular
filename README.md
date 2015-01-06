@@ -16,5 +16,5 @@ Plunks
 
 References
 -----------
-	* [Javascript Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+	*[Javascript Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 

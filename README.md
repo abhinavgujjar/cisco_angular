@@ -15,6 +15,7 @@ Plunks
 
 	* exercise 1 - http://plnkr.co/edit/ZjtBKawwcNqE9RoBO4d3
 	* http://plnkr.co/edit/D8kRKF?p=preview
+	* http://plnkr.co/edit/rGLQPE
 
 References
 -----------

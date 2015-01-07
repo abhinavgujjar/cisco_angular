@@ -8,7 +8,17 @@
 	"description": "We had a company meeting there",
 	"website": "http://www.clarksexotica.com/",
 	"pic": "goldenpalms.jpg"
-}, {
+},{
+		"id": "10",
+		"name": "SOME ELSE !!!!!!",
+		"price": 17000,
+		"location": "Race Course Road",
+		"img": "novotel.jpg",
+		"url": "http://www.theleela.com/",
+		"availableForBook": false,
+		"description": "Incoherently newt hound ",
+		"area": 40000
+	}, {
 	"id": "2",
 	"name": "Clarks Exotica",
 	"price": 13000,

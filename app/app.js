@@ -17,7 +17,7 @@ app.config(function($routeProvider) {
 	});
 
 	$routeProvider.otherwise({
-		redirectTo : '/home'
+		redirectTo : '/new'
 	})
 
 })

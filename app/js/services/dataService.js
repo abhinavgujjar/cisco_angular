@@ -1,4 +1,4 @@
-app.factory('dataService', function($http, $timeout) {
+app.factory('dataService', function($http, $timeout, $interval) {
 
 	var hotels;
 
@@ -15,6 +15,8 @@ app.factory('dataService', function($http, $timeout) {
 		number: 0
 	};
 
+	
+
 	return {
 		getHotels: function(callback) {
 			if (hotels) {
@@ -28,7 +30,7 @@ app.factory('dataService', function($http, $timeout) {
 
 					promise.success(function(data) {
 						hotels = data.result;
-						return callback(data.result);
+						return callback(hotels);
 					});
 
 				}, 2000);

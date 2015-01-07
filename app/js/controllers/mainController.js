@@ -1,9 +1,11 @@
 //register a controller
 app.controller('mainController',
 
-	function($scope) {
+	function($scope, $interval) {
 
-		
+		$interval(function(){
+			$scope.$broadcast('refresh', true);
+		}, 3000);		
 
 		var greeting = '';
 		var goodness = true;

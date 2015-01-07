@@ -1,5 +1,5 @@
 //declaring a module
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute','ngSanitize']);
 
 app.config(function($routeProvider) {
 

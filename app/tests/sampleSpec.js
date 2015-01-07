@@ -1,5 +1,4 @@
 describe('angularjs homepage todo list', function() {
-	var ptor = protractor.getInstance();
   xit('should add a todo', function() {
     browser.get('http://www.angularjs.org');
 
@@ -12,8 +11,10 @@ describe('angularjs homepage todo list', function() {
   });
 
   it('should get the home page', function() {
-    browser.get('http://localhost:7400/app');
-    ptor.waitForAngular();
-    ptor.getCurrentUrl().toBe('http://localhost:7400/app/#/home');
+    browser.get('http://localhost:7400/app/#/home');
+    var greeting = element(by.binding('greeting')).getText();
+
+    console.log('greeting' + greeting);
+    expect(greeting).toBe('Good Morning, Cisco 115');
   });
 });
